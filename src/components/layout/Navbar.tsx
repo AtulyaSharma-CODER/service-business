@@ -1,8 +1,9 @@
 "use client"
 
+"use client"
+
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
 import React, { useState, useEffect } from 'react'
 
@@ -58,9 +59,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" variant="primary" asChild>
-              <Link href="tel:+14155550199">📞 (415) 555-0199</Link>
-            </Button>
+            <Link
+              href="tel:+14155550199"
+              className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
+            >
+              📞 (415) 555-0199
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,9 +101,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="w-full" variant="primary" asChild onClick={() => setMobileOpen(false)}>
-                <Link href="tel:+14155550199">📞 (415) 555-0199</Link>
-              </Button>
+              <Link
+                href="tel:+14155550199"
+                onClick={() => setMobileOpen(false)}
+                className="w-full inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                📞 (415) 555-0199
+              </Link>
             </div>
           </div>
         )}
